@@ -1,0 +1,5 @@
+FORMAT STUDY_PACKAGE_RESULT STANDARD ,,,,,,,,,,,,,,,,
+Parent Ssp No,Parent Spk Cd,Parent Spk Ver No,Parent Ssp Att No,Parent Spk Abbr Title,Ssp No,Spk Cd,Spk Ver No,Ssp Att No,Spk Abbr Title,Year,Study Period,Study Period Description,Student Id,Student Name,Grade,Mark
+12121212,GD-SC,2,2,Graduate Diploma in Science,12121212,MAST22222,1,1,Tremendously Difficult Stuff,2023,SM2,Semester 2,123456,Doe John,,4
+24242424,B-SCI,4,1,Bachelor of Science,24242424,MAST22222,1,1,Tremendously Difficult Stuff,2023,SM2,Semester 2,654321,Ymous Anon,,64
+36363636,D-MATHSC,1,1,Dip Mathematical Sciences,36363636,MAST22222,1,1,Tremendously Difficult Stuff,2023,SM2,Semester 2,1010101,Who Amy,,96
