@@ -20,7 +20,7 @@ def diff(loc, rem, verbose=False):
                 name_col = row.index('Student Name')
                 mark_col = row.index('Mark')
             elif count > 1:
-                local_data[row[id_col]] = [row[mark_col], row[name_col]]  
+                local_data[row[id_col]] = [row[mark_col], row[name_col], False]
             count += 1
 
     with open(rem) as txtfile:
@@ -33,12 +33,18 @@ def diff(loc, rem, verbose=False):
                 print('conflict between')
                 print('  local:  does not exist')
                 print('  remote: %s %s mark %s' %(id, name, mark))
-            elif mark != local_data[id][0]:
-                print('conflict between')
-                print('  local:  %s %s mark %s' %(id, local_data[id][1], local_data[id][0]))
-                print('  remote: %s %s mark %s' %(id, name, mark))
-            elif verbose:
-                print(row)
+            else:
+                local_data[id][2] = True
+                if mark != local_data[id][0]:
+                    print('conflict between')
+                    print('  local:  %s %s mark %s' %(id, local_data[id][1], local_data[id][0]))
+                    print('  remote: %s %s mark %s' %(id, name, mark))
+                elif verbose:
+                    print(row)
+
+    for id in local_data:
+        if local_data[id][2] == False:
+            print('%s %s (mark %s) exists locally but not remotely' %(id, local_data[id][1], local_data[id][0]))
 
 
 def main():
